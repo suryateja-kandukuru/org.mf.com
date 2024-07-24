@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import NxWelcome from './nx-welcome';
+import SearchBarComponent from './search-component';
 
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const Remote2 = React.lazy(() => import('remote2/Module'));
 
 export function App() {
   return (
-    <React.Suspense fallback={null}>
+<React.Suspense fallback={null}>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -25,13 +25,14 @@ export function App() {
         </li>
       </ul>
       <Routes>
-        <Route path="/" element={<NxWelcome title="shell-with-remotes" />} />
+        <Route path="/" element={<SearchBarComponent />} />
 
         <Route path="/remote1" element={<Remote1 />} />
 
         <Route path="/remote2" element={<Remote2 />} />
       </Routes>
     </React.Suspense>
+
   );
 }
 

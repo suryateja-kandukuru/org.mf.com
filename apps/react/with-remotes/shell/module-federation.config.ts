@@ -14,7 +14,55 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
+  exposes: {
+ //   './shared-state': '../../../../libs/src/index.ts',
+  },
   remotes: ['remote1', 'remote2'],
+  shared: (name, config) => {
+    return false;
+  },
+  additionalShared: [
+    {
+      libraryName: 'react',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: '18.2.0',
+      },
+    },
+    {
+      libraryName: 'react-dom',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: '18.2.0',
+      },
+    },
+    {
+      libraryName: 'react/jsx-dev-runtime',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: '18.2.0',
+      },
+    },
+    {
+      libraryName: '@mfe-monorepo/shared-state',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: false,
+      },
+    },
+    {
+      libraryName: 'jotai',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: false,
+      },
+    },
+  ],
 };
 
 export default config;
