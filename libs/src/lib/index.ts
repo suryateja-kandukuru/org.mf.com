@@ -1,9 +1,10 @@
 import Button from './Button';
 
-import { searchTermAtom , countAtom} from './statemanagement';
+import { searchTermAtom , countAtom, useBearStore} from './statemanagement';
 
 export {
   Button,
   searchTermAtom,
-  countAtom
+  countAtom,
+  useBearStore
 }

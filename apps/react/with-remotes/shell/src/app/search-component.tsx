@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useEffect } from 'react';
 import { useAtom } from 'jotai'
 import { searchTermAtom } from '@org.mf.com/statemanagement';
+import { useBearStore } from 'libs/src/lib/statemanagement';
 
 const Remote = React.lazy(() => import('remote1/Module'));
 
@@ -37,10 +38,16 @@ const SearchBar: React.FC = () => {
     setSearchTerm(event.target.value)
   };
 
+  const increaseCount = useBearStore((state: any) => state.increasePopulation)
+
+
   useEffect(() => {
     setInterval(() => {
-      const random = Math.random() * 100
-    setSearchTerm(random.toString())
+    //   const random = Math.random() * 100
+    // setSearchTerm(random.toString())
+      setInterval(() => {
+        increaseCount()
+      }, 5000)
     }, 5000)
   },[])
 
