@@ -62,6 +62,14 @@ const config: ModuleFederationConfig = {
         requiredVersion: false,
       },
     },
+    {
+      libraryName: 'zustand',
+      sharedConfig: {
+        eager: false,
+        singleton: true,
+        requiredVersion: false,
+      },
+    },
   ],
 };
 
