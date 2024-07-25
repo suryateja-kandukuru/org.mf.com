@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "remote1/Module": ["apps/react/with-remotes/remote1/src/remote-entry.ts"],
-      "remote2/Module": ["apps/react/with-remotes/remote2/src/remote-entry.ts"]
+       "remote1/Module": ["apps/react/with-remotes/remote1/src/remote-entry.ts"],
+      "remote2/Module": ["apps/react/with-remotes/remote2/src/store.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

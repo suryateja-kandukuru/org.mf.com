@@ -1,12 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
 
-import NxWelcome from './nx-welcome';
+import useStore from 'remote2/Module';
+
 
 export function App() {
+  const { count, increment } = useStore();
+
   return (
     <div>
-      <NxWelcome title="remote1" />
+      <p>remote count: { count }</p>
     </div>
   );
 }
