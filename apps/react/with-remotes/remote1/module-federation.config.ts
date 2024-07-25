@@ -5,6 +5,8 @@ const config: ModuleFederationConfig = {
 
   exposes: {
     './Module': './src/remote-entry.ts',
+    './jotai': '../../../../libs/src/index.ts',
+
   },
   shared: (name, config) => {
     return false;

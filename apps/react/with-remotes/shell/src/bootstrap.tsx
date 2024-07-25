@@ -4,16 +4,19 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'jotai';
 
 import App from './app/app';
+import { AppContextProvider } from '@org.mf.com/statemanagement';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <StrictMode>
-    <Provider>
     <BrowserRouter>
+    <AppContextProvider>
+    <Provider>
       <App />
-    </BrowserRouter>
     </Provider>
+    </AppContextProvider>
+    </BrowserRouter>
   </StrictMode>
 );

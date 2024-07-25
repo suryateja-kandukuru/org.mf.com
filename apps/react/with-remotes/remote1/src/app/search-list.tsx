@@ -1,8 +1,9 @@
+/* eslint-disable @nx/enforce-module-boundaries */
 import { atom, useAtom, useAtomValue, useSetAtom } from 'jotai';
 import React, { useEffect, useMemo } from 'react';
 
-import { searchTermAtom, Button, countAtom , useBearStore} from '@org.mf.com/statemanagement';
-//  import { searchTermAtom } from 'shell/shared-state';
+import {  Button, countAtom , useBearStore, useAppContext} from '@org.mf.com/statemanagement';
+ import { searchTermAtom } from 'libs/jotai';
 
 
 const styles = {
@@ -27,6 +28,7 @@ const styles = {
 const items: string[] = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
 
 function SearchListComponent() {
+  const { state } = useAppContext()
 
   const bears = useBearStore((state: any) => {
     console.log('bears', state)
@@ -36,6 +38,7 @@ function SearchListComponent() {
 
   const [searchTerm] =   useAtom(searchTermAtom);
 
+  console.log(searchTermAtom)
   const filterItems = useMemo(() => {
     const filtered = items.filter((item) =>
       item.toLowerCase().includes(item.toLowerCase())
@@ -51,6 +54,8 @@ function SearchListComponent() {
     }, 5000)
   },[])
 
+  console.log('context state', state)
+
   return (
     <>
       <div>SearchListComponent</div>
@@ -63,6 +68,8 @@ function SearchListComponent() {
           </li>
         ))}
       </ul>
+
+      context -value - {state.count}
     </>
   );
 }

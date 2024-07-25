@@ -15,7 +15,7 @@ const config: ModuleFederationConfig = {
    *
    */
   exposes: {
- //   './shared-state': '../../../../libs/src/index.ts',
+    './jotai': '../../../../libs/src/index.ts',
   },
   remotes: ['remote1', 'remote2'],
   shared: (name, config) => {
