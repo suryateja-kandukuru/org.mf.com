@@ -7,7 +7,7 @@ const Remote = React.lazy(() => import('remote1/Module'));
 
 const SearchBar: React.FC = () => {
 
-  const count = useBearStore((state: any) => state.count)
+  const {count} = useBearStore()
 
   return (
    <>

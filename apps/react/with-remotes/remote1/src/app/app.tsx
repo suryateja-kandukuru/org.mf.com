@@ -4,7 +4,7 @@ import styles from './app.module.scss';
 
 
 export function App() {
-  const  { increaseCount, count } = useBearStore((state: any) => state)
+  const  { increaseCount, count } = useBearStore()
 
   return (
     <div>

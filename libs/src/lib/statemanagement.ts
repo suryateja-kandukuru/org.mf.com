@@ -1,10 +1,14 @@
-import { create } from 'zustand'
+import { atom, useAtom } from 'jotai';
 
-export const useBearStore = create((set) => ({
-  count: 0,
-  increaseCount: () => set((state: any) => {
-    console.log('satet surya', state)
-    return ({ count: state.count + 1 })
-  }),
-  removeAllCounts: () => set({ count: 0 }),
-}))
+const countAtom = atom(0);
+
+export const useBearStore = () => {
+  const [count, setCount] = useAtom(countAtom);
+
+  const increaseCount = () => setCount((c) => c + 1);
+
+  return {
+    count,
+    increaseCount,
+  };
+}
