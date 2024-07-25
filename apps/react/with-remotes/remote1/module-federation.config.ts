@@ -16,7 +16,7 @@ const config: ModuleFederationConfig = {
     sharedConfig: {
       eager: false,
       singleton: true,
-      requiredVersion: '18.2.0',
+      requiredVersion: '18.3.1',
     },
   },
   {
@@ -24,7 +24,7 @@ const config: ModuleFederationConfig = {
     sharedConfig: {
       eager: false,
       singleton: true,
-      requiredVersion: '18.2.0',
+      requiredVersion: '18.3.1',
     },
   },
   {
@@ -32,7 +32,7 @@ const config: ModuleFederationConfig = {
     sharedConfig: {
       eager: false,
       singleton: true,
-      requiredVersion: '18.2.0',
+      requiredVersion: '18.3.1',
     },
   },
     {

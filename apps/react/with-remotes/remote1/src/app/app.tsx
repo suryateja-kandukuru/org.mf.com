@@ -1,12 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { useBearStore } from '@mfe-monorepo/shared-state';
 import styles from './app.module.scss';
 
-import SearchListComponent from './search-list';
 
 export function App() {
+  const  { increaseCount, count } = useBearStore((state: any) => state)
+
   return (
     <div>
-      <SearchListComponent />
+      <button onClick={() => increaseCount()}>Click me</button>
+      <p>count - {count}</p>
     </div>
   );
 }

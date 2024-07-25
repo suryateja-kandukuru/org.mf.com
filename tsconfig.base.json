@@ -15,11 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@org.mf.com/statemanagement": ["libs/src/index.ts"],
-      "shell/shared-state": ["libs/src/index.ts"],
+      "@mfe-monorepo/shared-state": ["libs/src/index.ts"],
       "remote1/Module": ["apps/react/with-remotes/remote1/src/remote-entry.ts"],
       "remote2/Module": ["apps/react/with-remotes/remote2/src/remote-entry.ts"],
-      "libs/jotai": ["libs/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
